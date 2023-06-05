@@ -28,5 +28,20 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.calc.divide(10, 0)
 
+    def test_power(self):
+        self.assertEqual(self.calc.power(2, 3), 8)
+        self.assertEqual(self.calc.power(-2, 3), -8)
+        self.assertEqual(self.calc.power(-2, 0), 1)
+
+    def test_sqrt(self):
+        self.assertEqual(self.calc.sqrt(4), 2)
+        self.assertEqual(self.calc.sqrt(9), 3)
+        self.assertEqual(self.calc.sqrt(-1), None)
+
+    def test_factorial(self):
+        self.assertEqual(self.calc.factorial(5), 120)
+        self.assertEqual(self.calc.factorial(0), 1)
+        self.assertEqual(self.calc.factorial(-10), None)
+
 if __name__ == '__main__':
     unittest.main()
